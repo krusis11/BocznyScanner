@@ -10,11 +10,13 @@ import SwiftUI
 @main
 struct BocznyScannerApp: App {
     let persistenceController = PersistenceController.shared
+    
 
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            HomeView()
                 .environment(\.managedObjectContext, persistenceController.container.viewContext)
         }
+        
     }
 }

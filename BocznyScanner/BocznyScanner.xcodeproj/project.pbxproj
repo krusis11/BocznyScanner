@@ -13,6 +13,13 @@
 		2CC3CF1C2CF3B5DF00CA61AB /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2CC3CF1B2CF3B5DF00CA61AB /* Preview Assets.xcassets */; };
 		2CC3CF1E2CF3B5DF00CA61AB /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CC3CF1D2CF3B5DF00CA61AB /* Persistence.swift */; };
 		2CC3CF212CF3B5DF00CA61AB /* BocznyScanner.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2CC3CF1F2CF3B5DF00CA61AB /* BocznyScanner.xcdatamodeld */; };
+		2CC3CF282CF3B69700CA61AB /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CC3CF272CF3B69700CA61AB /* HomeView.swift */; };
+		2CC3CF2A2CF3B85C00CA61AB /* ScannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CC3CF292CF3B85C00CA61AB /* ScannerViewController.swift */; };
+		2CC3CF2C2CF3BEB700CA61AB /* CodeDisplayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CC3CF2B2CF3BEB700CA61AB /* CodeDisplayView.swift */; };
+		2CF430192CF64ADE00CC5C11 /* FileBrowserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CF430182CF64ADE00CC5C11 /* FileBrowserView.swift */; };
+		2CF4301B2CF64B7D00CC5C11 /* FilePreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CF4301A2CF64B7D00CC5C11 /* FilePreviewView.swift */; };
+		2CF4301D2CF64C1000CC5C11 /* extenstions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CF4301C2CF64C1000CC5C11 /* extenstions.swift */; };
+		2CF4302A2CF6744B00CC5C11 /* CoreXLSX in Frameworks */ = {isa = PBXBuildFile; productRef = 2CF430292CF6744B00CC5C11 /* CoreXLSX */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +30,14 @@
 		2CC3CF1B2CF3B5DF00CA61AB /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		2CC3CF1D2CF3B5DF00CA61AB /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		2CC3CF202CF3B5DF00CA61AB /* BocznyScanner.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = BocznyScanner.xcdatamodel; sourceTree = "<group>"; };
+		2CC3CF272CF3B69700CA61AB /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		2CC3CF292CF3B85C00CA61AB /* ScannerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannerViewController.swift; sourceTree = "<group>"; };
+		2CC3CF2B2CF3BEB700CA61AB /* CodeDisplayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeDisplayView.swift; sourceTree = "<group>"; };
+		2CF430182CF64ADE00CC5C11 /* FileBrowserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileBrowserView.swift; sourceTree = "<group>"; };
+		2CF4301A2CF64B7D00CC5C11 /* FilePreviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilePreviewView.swift; sourceTree = "<group>"; };
+		2CF4301C2CF64C1000CC5C11 /* extenstions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = extenstions.swift; sourceTree = "<group>"; };
+		2CF4301E2CF64E6600CC5C11 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		2CF4301F2CF6504300CC5C11 /* BocznyScanner.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = BocznyScanner.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -30,6 +45,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2CF4302A2CF6744B00CC5C11 /* CoreXLSX in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -39,6 +55,7 @@
 		2CC3CF082CF3B5DC00CA61AB = {
 			isa = PBXGroup;
 			children = (
+				2CC3CF2B2CF3BEB700CA61AB /* CodeDisplayView.swift */,
 				2CC3CF132CF3B5DD00CA61AB /* BocznyScanner */,
 				2CC3CF122CF3B5DD00CA61AB /* Products */,
 			);
@@ -55,7 +72,14 @@
 		2CC3CF132CF3B5DD00CA61AB /* BocznyScanner */ = {
 			isa = PBXGroup;
 			children = (
+				2CF4301F2CF6504300CC5C11 /* BocznyScanner.entitlements */,
+				2CF4301E2CF64E6600CC5C11 /* Info.plist */,
+				2CC3CF292CF3B85C00CA61AB /* ScannerViewController.swift */,
 				2CC3CF142CF3B5DD00CA61AB /* BocznyScannerApp.swift */,
+				2CC3CF272CF3B69700CA61AB /* HomeView.swift */,
+				2CF430182CF64ADE00CC5C11 /* FileBrowserView.swift */,
+				2CF4301A2CF64B7D00CC5C11 /* FilePreviewView.swift */,
+				2CF4301C2CF64C1000CC5C11 /* extenstions.swift */,
 				2CC3CF162CF3B5DD00CA61AB /* ContentView.swift */,
 				2CC3CF182CF3B5DF00CA61AB /* Assets.xcassets */,
 				2CC3CF1D2CF3B5DF00CA61AB /* Persistence.swift */,
@@ -89,6 +113,9 @@
 			dependencies = (
 			);
 			name = BocznyScanner;
+			packageProductDependencies = (
+				2CF430292CF6744B00CC5C11 /* CoreXLSX */,
+			);
 			productName = BocznyScanner;
 			productReference = 2CC3CF112CF3B5DD00CA61AB /* BocznyScanner.app */;
 			productType = "com.apple.product-type.application";
@@ -117,6 +144,9 @@
 				Base,
 			);
 			mainGroup = 2CC3CF082CF3B5DC00CA61AB;
+			packageReferences = (
+				2CF430282CF6744B00CC5C11 /* XCRemoteSwiftPackageReference "CoreXLSX" */,
+			);
 			productRefGroup = 2CC3CF122CF3B5DD00CA61AB /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -144,9 +174,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				2CC3CF1E2CF3B5DF00CA61AB /* Persistence.swift in Sources */,
+				2CC3CF2C2CF3BEB700CA61AB /* CodeDisplayView.swift in Sources */,
+				2CC3CF2A2CF3B85C00CA61AB /* ScannerViewController.swift in Sources */,
 				2CC3CF212CF3B5DF00CA61AB /* BocznyScanner.xcdatamodeld in Sources */,
 				2CC3CF172CF3B5DD00CA61AB /* ContentView.swift in Sources */,
+				2CF4301B2CF64B7D00CC5C11 /* FilePreviewView.swift in Sources */,
+				2CF4301D2CF64C1000CC5C11 /* extenstions.swift in Sources */,
+				2CC3CF282CF3B69700CA61AB /* HomeView.swift in Sources */,
 				2CC3CF152CF3B5DD00CA61AB /* BocznyScannerApp.swift in Sources */,
+				2CF430192CF64ADE00CC5C11 /* FileBrowserView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -205,7 +241,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -262,7 +298,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
@@ -277,17 +313,23 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = BocznyScanner/BocznyScanner.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"BocznyScanner/Preview Content\"";
 				DEVELOPMENT_TEAM = 96DNG3HR9U;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = BocznyScanner/Info.plist;
+				INFOPLIST_KEY_LSSupportsOpeningDocumentsInPlace = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "We need access to your camera for barcode scanning";
+				INFOPLIST_KEY_NSFileProviderDomainUsageDescription = "Dostęp do plików";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "We need access to your photo library";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -295,9 +337,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = krusis.BocznyScanner;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -306,17 +351,23 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = BocznyScanner/BocznyScanner.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"BocznyScanner/Preview Content\"";
 				DEVELOPMENT_TEAM = 96DNG3HR9U;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = BocznyScanner/Info.plist;
+				INFOPLIST_KEY_LSSupportsOpeningDocumentsInPlace = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "We need access to your camera for barcode scanning";
+				INFOPLIST_KEY_NSFileProviderDomainUsageDescription = "Dostęp do plików";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "We need access to your photo library";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -324,9 +375,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = krusis.BocznyScanner;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -352,6 +406,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		2CF430282CF6744B00CC5C11 /* XCRemoteSwiftPackageReference "CoreXLSX" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/CoreOffice/CoreXLSX.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.14.2;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		2CF430292CF6744B00CC5C11 /* CoreXLSX */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2CF430282CF6744B00CC5C11 /* XCRemoteSwiftPackageReference "CoreXLSX" */;
+			productName = CoreXLSX;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		2CC3CF1F2CF3B5DF00CA61AB /* BocznyScanner.xcdatamodeld */ = {
