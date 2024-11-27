@@ -15,6 +15,7 @@ struct BocznyScannerApp: App {
     var body: some Scene {
         WindowGroup {
             HomeView()
+//            FileBrowserView()
                 .environment(\.managedObjectContext, persistenceController.container.viewContext)
         }
         

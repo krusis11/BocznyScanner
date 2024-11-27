@@ -1,6 +1,6 @@
 import SwiftUI
-import UIKit
 import CoreXLSX
+import UniformTypeIdentifiers
 
 struct HomeView: View {
     struct ScannerView: UIViewControllerRepresentable {
@@ -26,7 +26,8 @@ struct HomeView: View {
     @State private var showPopup = false
     @State private var isFileSelected = false
     @State private var message = ""
-    
+    @State private var isFileImporterPresented = false
+
     var body: some View {
         NavigationView {
             VStack {
@@ -78,26 +79,26 @@ struct HomeView: View {
             .navigationTitle("Główne Menu")
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    if selectedFile != nil {
-                        Image(systemName: "checkmark.circle.fill")
-                            .foregroundColor(.green)
-                    }
-                }
                 ToolbarItem(placement: .navigationBarLeading) {
                     Button(action: {
-                        showFileBrowser = true
+                        isFileImporterPresented = true
                     }) {
                         Image(systemName: "folder")
                             .foregroundColor(.blue)
                     }
-                    .sheet(isPresented: $showFileBrowser) {
-                        FileBrowserView(selectedFile: $selectedFile, isFileSelected: $isFileSelected)
-                            .onDisappear {
-                                if selectedFile != nil {
-                                    showPopup = true
-                                }
-                            }
+                    .fileImporter(
+                        isPresented: $isFileImporterPresented,
+                        allowedContentTypes: [UTType(filenameExtension: "xls")!, UTType(filenameExtension: "xlsx")!],
+                        allowsMultipleSelection: false
+                    ) { result in
+                        handleFileSelection(result)
+                    }
+                }
+                
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    if selectedFile != nil {
+                        Image(systemName: "checkmark.circle.fill")
+                            .foregroundColor(.green)
                     }
                 }
             }
@@ -110,8 +111,51 @@ struct HomeView: View {
             }
         }
     }
+    
+    /// Handles file selection from the file importer
+    private func handleFileSelection(_ result: Result<[URL], Error>) {
+        do {
+            let urls = try result.get()
+            if let url = urls.first {
+                selectedFile = url
+                isFileSelected = true
+                showPopup = true
+            }
+        } catch {
+            print("Error selecting file: \(error.localizedDescription)")
+        }
+    }
 
     func processBarcodeData(from excelFileURL: URL, barcode: String) {
-        // Same implementation as in FileBrowserView's processBarcodeData method.
+        do {
+            let file = try XLSXFile(filepath: excelFileURL.path)
+            
+            // Assuming we are looking for a worksheet named "Laptopy"
+            guard let worksheet = try file?.parseWorksheet(at: "Laptopy") else {
+                message = "Worksheet 'Laptopy' not found."
+                return
+            }
+            
+            var dataSummary = "Processed rows:\n"
+            
+            // Iterate through rows to process data
+            for row in worksheet.data?.rows ?? [] {
+                let barcodeValue = getValueFromColumn(row: row, column: "pusta")
+                dataSummary += "Barcode: \(barcodeValue)\n"
+                // Add more fields if needed
+            }
+            
+            message = dataSummary
+            
+        } catch {
+            message = "Error processing file: \(error.localizedDescription)"
+        }
+    }
+    
+    func getValueFromColumn(row: Row, column: String) -> String {
+        if let cell = row.cells.first(where: { $0.reference.column.description == column })?.value {
+            return cell as? String ?? ""
+        }
+        return ""
     }
 }

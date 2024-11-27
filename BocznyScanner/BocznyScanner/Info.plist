@@ -3,25 +3,42 @@
 <plist version="1.0">
 <dict>
 	<key>CFBundleDocumentTypes</key>
+<array>
+    <dict>
+        <key>CFBundleTypeExtensions</key>
+        <array>
+            <string>xls</string>
+            <string>xlsx</string>
+        </array>
+        <key>CFBundleTypeName</key>
+        <string>Excel Files</string>
+        <key>CFBundleTypeRole</key>
+        <string>Editor</string>
+        <key>LSHandlerRank</key>
+        <string>Default</string>
+    </dict>
+</array>
+<key>NSAppTransportSecurity</key>
+<dict>
+    <key>NSAllowsArbitraryLoads</key>
+    <true/>
+</dict>
+<key>NSDocumentsUsageDescription</key>
+<string>We need access to your files for selecting and processing data.</string>
+<key>NSFileProviderUsageDescription</key>
+<string>We need access to your files to work with documents stored in the Files app.</string>
+
+	<key>LSApplicationQueriesSchemes</key>
 	<array>
-		<dict>
-			<key>CFBundleTypeName</key>
-			<string>Excel Files</string>
-			<key>CFBundleTypeExtensions</key>
-			<array>
-				<string>xls</string>
-				<string>xlsx</string>
-			</array>
-			<key>CFBundleTypeRole</key>
-			<string>Editor</string>
-		</dict>
+		<string>file</string>
+		<string>files</string>
 	</array>
+	<key>NSDocumentDirectoryUsageDescription</key>
+<string>We need access to files and folders for [your app's functionality].</string>
 	<key>NSDocumentsUsageDescription</key>
 	<string>We need access to your files for selecting and processing data.</string>
 	<key>NSFileProviderUsageDescription</key>
 	<string>We need access to your files to work with documents stored in the Files app.</string>
-	<key>NSDocumentsFolderUsageDescription</key>
-	<string>Proszę pozwolić aplikacji na dostęp do folderu Dokumenty, aby wybrać plik.</string>
 	<key>UIBackgroundModes</key>
 	<array>
 		<string>fetch</string>
@@ -30,12 +47,5 @@
 	</array>
 	<key>UIFileSharingEnabled</key>
 	<true/>
-	<key>UISupportsDocumentBrowser</key>
-	<true/>
-	<key>LSApplicationQueriesSchemes</key>
-	<array>
-		<string>file</string>
-		<string>files</string>
-	</array>
 </dict>
 </plist>
