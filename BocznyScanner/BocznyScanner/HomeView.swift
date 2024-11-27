@@ -1,6 +1,8 @@
 import SwiftUI
 import CoreXLSX
 import UniformTypeIdentifiers
+import MobileCoreServices
+import Foundation
 
 struct HomeView: View {
     struct ScannerView: UIViewControllerRepresentable {
@@ -90,6 +92,8 @@ struct HomeView: View {
                         isPresented: $isFileImporterPresented,
                         allowedContentTypes: [UTType(filenameExtension: "xls")!, UTType(filenameExtension: "xlsx")!],
                         allowsMultipleSelection: false
+                        
+                        
                     ) { result in
                         handleFileSelection(result)
                     }
@@ -102,6 +106,7 @@ struct HomeView: View {
                     }
                 }
             }
+          
             .alert(isPresented: $showPopup) {
                 Alert(
                     title: Text("Plik załadowany"),
@@ -109,22 +114,29 @@ struct HomeView: View {
                     dismissButton: .default(Text("OK"))
                 )
             }
+            
         }
+       
     }
-    
     /// Handles file selection from the file importer
-    private func handleFileSelection(_ result: Result<[URL], Error>) {
-        do {
-            let urls = try result.get()
-            if let url = urls.first {
-                selectedFile = url
-                isFileSelected = true
-                showPopup = true
+    func handleFileSelection(_ result: Result<[URL], Error>) {
+        switch result {
+        case .success(let urls):
+            guard let url = urls.first else {
+                print("No files selected.")
+                return
             }
-        } catch {
+            
+            selectedFile = url
+            isFileSelected = true
+            showPopup = true
+//            print("File selected: \(url.lastPathComponent)")
+            
+        case .failure(let error):
             print("Error selecting file: \(error.localizedDescription)")
         }
     }
+
 
     func processBarcodeData(from excelFileURL: URL, barcode: String) {
         do {

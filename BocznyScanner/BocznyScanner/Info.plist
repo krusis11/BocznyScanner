@@ -23,11 +23,11 @@
     <key>NSAllowsArbitraryLoads</key>
     <true/>
 </dict>
-<key>NSDocumentsUsageDescription</key>
-<string>We need access to your files for selecting and processing data.</string>
-<key>NSFileProviderUsageDescription</key>
-<string>We need access to your files to work with documents stored in the Files app.</string>
-
+<key>NSAppTransportSecurity</key>
+<dict>
+    <key>NSAllowsArbitraryLoads</key>
+    <true/>
+</dict>
 	<key>LSApplicationQueriesSchemes</key>
 	<array>
 		<string>file</string>

@@ -1,6 +1,9 @@
 import SwiftUI
-import UniformTypeIdentifiers
 import CoreXLSX
+import UniformTypeIdentifiers
+import MobileCoreServices
+import Foundation
+import UIKit
 
 struct FileBrowserView: View {
     @State private var selectedFile: URL?
@@ -17,6 +20,7 @@ struct FileBrowserView: View {
                 isPresented: $isFileImporterPresented,
                 allowedContentTypes: [UTType(filenameExtension: "xls")!, UTType(filenameExtension: "xlsx")!],
                 allowsMultipleSelection: false
+                
                 
             ) { result in
                 handleFileSelection(result)
@@ -43,6 +47,7 @@ struct FileBrowserView: View {
         .padding()
     }
     
+    
     /// Handles file selection and updates the state
     private func handleFileSelection(_ result: Result<[URL], Error>) {
         do {
@@ -64,7 +69,7 @@ struct FileBrowserView: View {
             let file = try XLSXFile(filepath: fileURL.path)
             
             // Assuming we are looking for a worksheet named "Laptopy"
-            guard let worksheet = try file?.parseWorksheet(at: "Laptopy") else {
+            guard let worksheet = try file?.parseWorksheet(at: "0") else {
                 fileProcessingResult = "Worksheet 'Laptopy' not found."
                 return
             }

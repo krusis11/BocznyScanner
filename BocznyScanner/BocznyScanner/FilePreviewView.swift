@@ -1,4 +1,9 @@
 import SwiftUI
+import SwiftUI
+import CoreXLSX
+import UniformTypeIdentifiers
+import MobileCoreServices
+import Foundation
 
 struct FilePreviewView: View {
     let file: URL
